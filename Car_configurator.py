@@ -25,39 +25,130 @@ def carModel():
     # The choose_model string is used for the while loop below.
     model_info = []
     choose_model = "yes"
+    selection = ""
 
     # This loop ensures that the user will be repeatedly asked to select an option until they select a valid option.
     while choose_model == "yes":
 
-        choice = input(('''\nPlease select a car model: 
-        1. Mustang - £27,000
-        2. Chevrolet - £50,000
-        3. Ferrari - £200,000
-        4. McLaren - £300,000
-        
-        '''))
+        choice = input(('''\nPlease select a brand to see the details of the car: 
+        1. Ford
+        2. Chevrolet
+        3. Audi
+        4. Ferrari
+        5. McLaren
+        6. Lamborghini
+        7. Bugatti
+        : '''))
 
-        # If the user selects one of the options from the list above, then the corresponding price and name will be added to the list.
-        # The choose_model variable is then set to "no" in order to exit the loop.
+        # If the user selects one of the options from the list above, then the corresponding details of each car are displayed.
+        # The user is then asked whether they would like to select the car. If they say yes then, the price and the name of the brand
+        # is appended to the list and the choose_model variable is then set to "no" in order to exit the loop.
+        # If the user chooses not to select the car they are presented with the brands list again where they can select a different one.
+        # If the user does not select "yes" or "no" they are shown an error message and returned to the brands list.
         if choice == "1":
-            model_info.append(2700)
-            model_info.append("Mustang")
-            choose_model = "no"
+            print("\nModel - Ford Mustang/Shelby GT500\nEngine - 5.2L V8\nPower - 760hp @ 7,300rpm\nTransmission - 7-Speed Automatic\nPrice - £25,000")
+            selection = input("\nWould you like to select this car? Yes/No: ").lower()
+
+            if selection == "yes":
+                model_info.append(25000)
+                model_info.append("Ford")
+                choose_model = "no"
+
+            elif selection == "no":
+                continue
+        
+            else: 
+                print("\nYou have made an invalid selection, please try again.")
         
         elif choice == "2":
-            model_info.append(50000)
-            model_info.append("Chevrolet") 
-            choose_model = "no"
+            print("\nModel - Chevrolet Camaro\nEngine - 2.0L\nPower - 275hp @ 4,500rpm\nTransmission - 6 Speed Manual\nPrice - £50,000")
+            selection = input("\nWould you like to select this car? Yes/No: ").lower()
+
+            if selection == "yes":
+                model_info.append(50000)
+                model_info.append("Chevrolet") 
+                choose_model = "no"
+            
+            elif selection == "no":
+                continue
+
+            else:
+                print("\nYou have made an invalid selection, please try again.")
         
         elif choice == "3":
-            model_info.append(200000)
-            model_info.append("Ferrari") 
-            choose_model = "no"
-        
+            print("\nModel - Audi R8\nEngine - 5.2L V10\nPower - 562hp @ 8,000rpm\nTransmission - 7 Speed Automatic\nPrice - £100,000")
+            selection = input("\nWould you like to select this car? Yes/No: ").lower()
+
+            if selection == "yes":
+                model_info.append(100000)
+                model_info.append("Audi") 
+                choose_model = "no"
+            
+            elif selection == "no":
+                continue
+
+            else:
+                print("\nYou have made an invalid selection, please try again.")
+
         elif choice == "4":
-            model_info.append(300000)
-            model_info.append("McLaren")
-            choose_model = "no"
+            print("\nModel - Ferrari Roma\nEngine - 3.9L V8\nPower - 612hp @ 5,750rpm\nTransmission - 8 Speed Automatic\nPrice - £200,000")
+            selection = input("\nWould you like to select this car? Yes/No: ").lower()
+
+            if selection == "yes":
+                model_info.append(200000)
+                model_info.append("Ferrari") 
+                choose_model = "no"
+            
+            elif selection == "no":
+                continue
+
+            else:
+                print("\nYou have made an invalid selection, please try again.")
+        
+        elif choice == "5":
+            print("\nModel - McLaren GT\nEngine - 4.0L V8\nPower - 612hp @ 7,500rpm\nTransmission - 7 Speed Automatic\nPrice - £300,000")
+            selection = input("\nWould you like to select this car? Yes/No: ").lower()
+
+            if selection == "yes":
+                model_info.append(300000)
+                model_info.append("McLaren")
+                choose_model = "no"
+            
+            elif selection == "no":
+                continue
+
+            else:
+                print("\nYou have made an invalid selection, please try again.")
+        
+        elif choice == "6":
+            print("\nModel - Lamborghini Huracan\nEngine - 5.2L V10\nPower - 602hp @ 8,000rpm\nTransmission - 7 Speed Automatic\nPrice - £400,000")
+            selection = input("\nWould you like to select this car? Yes/No: ").lower()
+
+            if selection == "yes":
+                model_info.append(400000)
+                model_info.append("Lamborghini")
+                choose_model = "no"
+            
+            elif selection == "no":
+                continue
+
+            else:
+                print("\nYou have made an invalid selection, please try again.")
+
+        elif choice == "7":
+            print("\nModel - Bugatti Veyron\nEngine - 8.0L W16\nPower - 1,001hp @ 6,000rpm\nTransmission - 7 Speed Automatic\nPrice - £1,500,000")
+            selection = input("\nWould you like to select this car? Yes/No: ").lower()
+
+            if selection == "yes":
+                model_info.append(1500000)
+                model_info.append("Bugatti")
+                choose_model = "no"
+            
+            elif selection == "no":
+                continue
+
+            else:
+                print("\nYou have made an invalid selection, please try again.")
 
         # If the user does not select a valid option then they are shown this error message and taken to the start of the loop.
         else:
